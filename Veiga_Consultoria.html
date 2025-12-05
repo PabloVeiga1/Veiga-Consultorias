@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veiga Consultoria Tributária - Créditos Tributários</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #191919;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin-right: 50px;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .nav-links li a:hover {
+            color: #3498db;
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+        }
+        #Saiba_Mais{
+            color:rgb(38, 38, 38);
+        }
+        .hero {
+            background: linear-gradient(to right, rgba(52, 152, 219, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 100px 2rem 80px;
+            text-align: center;
+            margin-top: 70px;
+            min-height: 300px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            background-color: #fff;
+            color: #db8534;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #ecf0f1;
+        }
+        .services {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #titprinc{
+            text-shadow: 2px 3px 6px rgba(19, 19, 19, 0.72);
+        }
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-item {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .service-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .service-item h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .cta {
+            background-color: #2c3e50;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        .cta h2 {
+            margin-bottom: 1rem;
+        }
+        footer {
+            background-color: #343f2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        .contact-info a {
+            color: #feaa5b;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 75%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 1rem;
+                box-shadow: 0 2px 4px rgba(36, 36, 36, 0.882);
+            }
+            .nav-links.active {
+                display: flex;
+                
+            }
+            .menu-toggle {
+                display: flex;
+                margin-right:50px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Veiga Consultoria Tributária</div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1 id="titprinc">Especialistas em Créditos Tributários</h1>
+        <p>Otimize seus impostos e maximize créditos fiscais com nossa consultoria profissional. Encontre oportunidades de emprego e soluções para empresas.</p>
+        <a href="#contact" class="btn" id="Saiba_Mais">Saiba Mais</a>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Nossos Serviços</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Documentos fiscais e calculadora representando assessoria fiscal" class="service-image">
+                <h3>Assessoria Fiscal</h3>
+                <p>Ajuda na identificação e aplicação de créditos tributários para reduzir impostos legais.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Reunião de equipe em escritório representando consultoria empresarial" class="service-image">
+                <h3>Consultoria Empresarial</h3>
+                <p>Soluções personalizadas para empresas, incluindo planejamento tributário e compliance.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Currículos e reunião representando oportunidades de emprego" class="service-image">
+                <h3>Oportunidades de Emprego</h3>
+                <p>Conectamos profissionais qualificados a vagas em créditos tributários e finanças.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <h2>Pronto para Otimizar Seus Créditos?</h2>
+        <p>Entre em contato conosco hoje e descubra como podemos ajudar.</p>
+        <a href="mailto:dono@gmail.com" class="btn">Fale Conosco</a>
+    </section>
+
+    <footer>
+        <div class="contact-info">
+            <a href="tel:8299999999">Telefone: 82 99999999</a>
+            <a href="mailto:dono@gmail.com">Email: dono@gmail.com</a>
+            <a href="https://www.instagram.com/veigaconsultoria" target="_blank">Instagram: @veigaconsultoria</a>
+        </div>
+        <p>&copy; 2023 Veiga Consultoria Tributária. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
